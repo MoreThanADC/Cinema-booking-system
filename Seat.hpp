@@ -17,6 +17,7 @@ public:
     // member functions
     void reserve();
     void cancelReservation();
+    void display();
 
 private:
     std::string name_;

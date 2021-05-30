@@ -25,12 +25,20 @@ void Seat::reserve() {
 }
 
 void Seat::cancelReservation() {
-    if (isReserved_) {
+    if (!isReserved_) {
         std::cout << "This seat is free\n";
     } else {
         name_ = "";
         surname_ = "";
         isReserved_ = false;
+        std::cout << "Seat number " << seatId_ << " has become vacant\n";
+    }
+}
+
+void Seat::display() {
+    if (isReserved_) {
+        std::cout << "Seat number " << seatId_ << " is reserved by " << name_ << " " << surname_ << "\n"; 
+    } else {
         std::cout << "Seat number " << seatId_ << " is free\n";
     }
 }
