@@ -14,9 +14,6 @@ public:
     size_t getId() const { return seatId_; };
     bool isReserved() const { return isReserved_; };
 
-    // operators
-   
-
     // member functions
     void reserve();
     void cancelReservation();

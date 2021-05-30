@@ -2,5 +2,13 @@
 
 Cinema::Cinema() {
     places.reserve(numberOfSeats_);
-    std::iota(places.begin(), places.end(), 1);
+    for (auto i = 1; i <= numberOfSeats_; ++i) {
+        places.push_back(Seat("", "", i, false));
+    }
 };
+
+void Cinema::displayAllPLaces() {
+    for (auto& el : places) {
+        el.display();
+    }
+}

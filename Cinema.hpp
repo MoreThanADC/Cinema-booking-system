@@ -8,7 +8,8 @@ class Cinema {
 
 public:
     Cinema();
+    void displayAllPLaces();
 private:
-    const size_t numberOfSeats_ = 90;
+    const size_t numberOfSeats_ = 30;
     std::vector<Seat> places;
 };

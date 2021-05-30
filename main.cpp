@@ -1,16 +1,15 @@
 #include "Menu.hpp"
 #include "Seat.hpp"
+#include "Cinema.hpp"
 
 int main() {
     // printMenu();
     // selectAction();
 
     Seat reservation;
-    reservation.display();
-    reservation.reserve();
-    reservation.display();
-    reservation.cancelReservation();
-    reservation.display();
+    Cinema kino;
+    kino.displayAllPLaces();
+
    
     return 0;
 }
