@@ -6,13 +6,16 @@ class Seat {
 public: 
     // c-tors
     Seat();
-    Seat(std::string, std::string, size_t, bool);
+    Seat(const std::string&, const std::string&, const size_t, const bool);
 
     // getters 
     std::string getName() const { return name_; };
     std::string getSurname() const { return surname_; };
     size_t getId() const { return seatId_; };
     bool isReserved() const { return isReserved_; };
+
+    // operators
+   
 
     // member functions
     void reserve();

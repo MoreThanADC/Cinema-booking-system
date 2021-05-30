@@ -7,7 +7,7 @@ Seat::Seat() {
     isReserved_ = false;
 }
     
-Seat::Seat(std::string name, std::string surname, size_t seatId, bool isReserved) 
+Seat::Seat(const std::string& name, const std::string& surname, const size_t seatId, const bool isReserved) 
 : name_(name), surname_(surname), seatId_(seatId), isReserved_(isReserved)
 {}
 
