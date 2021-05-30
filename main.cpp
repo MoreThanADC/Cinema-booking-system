@@ -1,4 +1,5 @@
 #include "menu.hpp"
+#include "seat.hpp"
 
 int main() {
     printMenu();
