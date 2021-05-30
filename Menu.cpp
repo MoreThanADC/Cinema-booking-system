@@ -1,7 +1,6 @@
 #include "Menu.hpp"
 
 void printMenu() {
-    std::cout << "Reservation of places: \n\n";
     std::cout << "1. Add reservation. \n";
     std::cout << "2. Delete reservation. \n";
     std::cout << "3. Check the place. \n";
@@ -12,6 +11,9 @@ void printMenu() {
 }
 
 void pressAButton() {
-    std::cout << "Press a button to continue: ";
+    std::cout << "\nPress a button to continue: ";
     std::getchar();
+    std::cin.ignore();
+    std::cin.sync();
+    
 }

@@ -1,4 +1,5 @@
 #include "Seat.hpp"
+#include "Cinema.hpp"
 
 Seat::Seat() {
     name_ = "";
@@ -16,17 +17,18 @@ void Seat::reserve() {
         std::cout << "The place is already booked\n";
     } else {
         std::string temporaryString;
-
+        std::cin.ignore();
         std::cout << "Name: ";
         std::getline(std::cin, temporaryString);
         Seat::setName(temporaryString);
-
+        
         std::cout << "Surname: ";
         std::getline(std::cin, temporaryString);
         Seat::setSurname(temporaryString);
 
         Seat::setReservedFlag(true);
-        std::cout << "Seat number " << Seat::getId() << " has been reserved by " << Seat::getName() << " " << Seat::getSurname() << "\n"; 
+        system("clear");
+        std::cout << "Seat number " << Seat::getId()  << " has been reserved by " << Seat::getName() << " " << Seat::getSurname() << "\n"; 
     }
 }
 
@@ -37,15 +39,15 @@ void Seat::cancelReservation() {
         Seat::setName("");
         Seat::setSurname("");
         Seat::setReservedFlag(false);
-        std::cout << "Seat number " << Seat::getId() << " has become vacant\n";
+        std::cout << "Seat number " << Seat::getId() << " has become free\n";
     }
 }
 
 void Seat::display() {
     if (Seat::isReserved()) {
-        std::cout << "Seat number " << Seat::getId() << " is reserved by " << Seat::getName() << " " << Seat::getSurname() << "\n"; 
+        std::cout << "Seat number " << Seat::getId()  << " is reserved by " << Seat::getName() << " " << Seat::getSurname() << "\n"; 
     } else {
-        std::cout << "Seat number " << Seat::getId() << " is free\n";
+        std::cout << "Seat number " << Seat::getId()  << " is free\n";
     }
 }
 
