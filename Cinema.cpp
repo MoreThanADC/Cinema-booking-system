@@ -1,9 +1,9 @@
 #include "Cinema.hpp"
 
 Cinema::Cinema() {
-    places.reserve(numberOfSeats_);
+    places_.reserve(numberOfSeats_);
     for (auto i = 1; i <= numberOfSeats_; ++i) {
-        places.push_back(Seat("", "", i, false));
+        places_.push_back(Seat("", "", i, false));
     }
 };
 
@@ -12,7 +12,16 @@ void Cinema::addReservation() {
     Cinema::displayAvailableSeats();
     Cinema::selectSeat();
     if (Cinema::selectSeat()) {
-        places[Cinema::selectSeat() - 1].reserve();
+        places_[Cinema::selectSeat() - 1].reserve();
+    }
+}
+
+void Cinema::deleteReservation() {
+    std::cout << "Cancel your reservation: \n";
+    Cinema::displayReservedSeats();
+    Cinema::selectSeat();
+    if (Cinema::selectSeat()) {
+        places_[Cinema::selectSeat() - 1].cancelReservation();
     }
 }
 
@@ -31,18 +40,18 @@ void Cinema::checkSeat() {
     std::cout << "Check the reservation: \n";
     Cinema::selectSeat();
     if (selectSeat()) {
-        places[selectSeat()].display();
+        places_[selectSeat()].display();
     }
 }
 
 void Cinema::displayAllSeats() {
-    for (auto& el : places) {
+    for (auto& el : places_) {
         el.display();
     }
 }
 
 void Cinema::displayAvailableSeats() {
-    for (auto& el : places) {
+    for (auto& el : places_) {
         if (!el.isReserved()) {
             el.display();
         }
@@ -50,7 +59,7 @@ void Cinema::displayAvailableSeats() {
 }
 
 void Cinema::displayReservedSeats() {
-    for (auto& el : places) {
+    for (auto& el : places_) {
         if (el.isReserved()) {
             el.display();
         }

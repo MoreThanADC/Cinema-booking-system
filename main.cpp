@@ -17,11 +17,11 @@ int main() {
             break;
         }
         case '2' : {
-            std::cout << "Delete reservation \n";
+            kino.deleteReservation();
             break;
         }
         case '3' : {
-            std::cout << "Check the place \n";
+            kino.checkSeat();
             break;
         }
         case '4' : {

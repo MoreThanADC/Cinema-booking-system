@@ -10,6 +10,7 @@ public:
     Cinema();
 
     void addReservation();
+    void deleteReservation();
     int selectSeat();
     void checkSeat();
     void displayAllSeats();
@@ -18,5 +19,5 @@ public:
 
 private:
     const size_t numberOfSeats_ = 7;
-    std::vector<Seat> places;
+    std::vector<Seat> places_;
 };
