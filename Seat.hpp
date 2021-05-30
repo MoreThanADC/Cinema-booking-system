@@ -14,6 +14,11 @@ public:
     size_t getId() const { return seatId_; };
     bool isReserved() const { return isReserved_; };
 
+    // setters
+    std::string setName(const std::string& name){ return name_ = name; };
+    std::string setSurname(const std::string& surname){ return surname_ = surname; };
+    bool setReservedFlag(const bool isReserved) { return isReserved_ = isReserved; };
+    
     // member functions
     void reserve();
     void cancelReservation();

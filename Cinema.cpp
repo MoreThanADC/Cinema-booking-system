@@ -1,8 +1,8 @@
 #include "Cinema.hpp"
 
 Cinema::Cinema() {
-    places_.reserve(numberOfSeats_);
-    for (auto i = 1; i <= numberOfSeats_; ++i) {
+    places_.reserve(Cinema::getNumberOfSeats());
+    for (auto i = 1; i <= Cinema::getNumberOfSeats(); ++i) {
         places_.push_back(Seat("", "", i, false));
     }
 };
@@ -10,7 +10,6 @@ Cinema::Cinema() {
 void Cinema::addReservation() {
     std::cout << "Available seats: \n";
     Cinema::displayAvailableSeats();
-    Cinema::selectSeat();
     if (Cinema::selectSeat()) {
         places_[Cinema::selectSeat() - 1].reserve();
     }
@@ -19,18 +18,17 @@ void Cinema::addReservation() {
 void Cinema::deleteReservation() {
     std::cout << "Cancel your reservation: \n";
     Cinema::displayReservedSeats();
-    Cinema::selectSeat();
     if (Cinema::selectSeat()) {
         places_[Cinema::selectSeat() - 1].cancelReservation();
     }
 }
 
 int Cinema::selectSeat() {
+    size_t selected;
     std::cout << "Select your seat: ";
-    int selected;
     std::cin >> selected;
 
-    if (selected < 1 || selected > numberOfSeats_) {
+    if (selected < 1 || selected > Cinema::getNumberOfSeats()) {
         std::cout << "there is no such place\n";
         return 0;
     } 

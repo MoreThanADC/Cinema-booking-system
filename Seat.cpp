@@ -12,34 +12,40 @@ Seat::Seat(const std::string& name, const std::string& surname, const size_t sea
 {}
 
 void Seat::reserve() {
-    if (isReserved_) {
+    if (Seat::isReserved()) {
         std::cout << "The place is already booked\n";
     } else {
+        std::string temporaryString;
+
         std::cout << "Name: ";
-        std::getline(std::cin, name_);
+        std::getline(std::cin, temporaryString);
+        Seat::setName(temporaryString);
+
         std::cout << "Surname: ";
-        std::getline(std::cin, surname_);
-        isReserved_ = true;
-        std::cout << "Seat number " << seatId_ << " has been reserved by " << name_ << " " << surname_ << "\n"; 
+        std::getline(std::cin, temporaryString);
+        Seat::setSurname(temporaryString);
+
+        Seat::setReservedFlag(true);
+        std::cout << "Seat number " << Seat::getId() << " has been reserved by " << Seat::getName() << " " << Seat::getSurname() << "\n"; 
     }
 }
 
 void Seat::cancelReservation() {
-    if (!isReserved_) {
+    if (!Seat::isReserved()) {
         std::cout << "This seat is free\n";
     } else {
-        name_ = "";
-        surname_ = "";
-        isReserved_ = false;
-        std::cout << "Seat number " << seatId_ << " has become vacant\n";
+        Seat::setName("");
+        Seat::setSurname("");
+        Seat::setReservedFlag(false);
+        std::cout << "Seat number " << Seat::getId() << " has become vacant\n";
     }
 }
 
 void Seat::display() {
-    if (isReserved_) {
-        std::cout << "Seat number " << seatId_ << " is reserved by " << name_ << " " << surname_ << "\n"; 
+    if (Seat::isReserved()) {
+        std::cout << "Seat number " << Seat::getId() << " is reserved by " << Seat::getName() << " " << Seat::getSurname() << "\n"; 
     } else {
-        std::cout << "Seat number " << seatId_ << " is free\n";
+        std::cout << "Seat number " << Seat::getId() << " is free\n";
     }
 }
 
