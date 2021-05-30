@@ -10,11 +10,22 @@ Cinema::Cinema() {
 void Cinema::addReservation() {
     std::cout << "Wolne miejsca: \n";
     Cinema::displayAvailableSeats();
+    Cinema::selectSeat();
+    if (Cinema::selectSeat() > 0) {
+        places[Cinema::selectSeat() - 1].reserve();
+    }
 }
 
-void Cinema::selectSeat() {
-    
+int Cinema::selectSeat() {
+    std::cout << "Select your seat: ";
+    int selected;
+    std::cin >> selected;
 
+    if (selected < 1 || selected > numberOfSeats_) {
+        std::cout << "there is no such place\n";
+        return 0;
+    } 
+    return selected;
 }
 
 void Cinema::displayAllSeats() {
