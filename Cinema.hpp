@@ -8,8 +8,10 @@ class Cinema {
 
 public:
     Cinema();
+
     void addReservation();
     int selectSeat();
+    void checkSeat();
     void displayAllSeats();
     void displayAvailableSeats();
     void displayReservedSeats();

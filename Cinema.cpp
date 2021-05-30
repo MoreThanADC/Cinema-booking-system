@@ -8,10 +8,10 @@ Cinema::Cinema() {
 };
 
 void Cinema::addReservation() {
-    std::cout << "Wolne miejsca: \n";
+    std::cout << "Available seats: \n";
     Cinema::displayAvailableSeats();
     Cinema::selectSeat();
-    if (Cinema::selectSeat() > 0) {
+    if (Cinema::selectSeat()) {
         places[Cinema::selectSeat() - 1].reserve();
     }
 }
@@ -26,6 +26,13 @@ int Cinema::selectSeat() {
         return 0;
     } 
     return selected;
+}
+void Cinema::checkSeat() {
+    std::cout << "Check the reservation: \n";
+    Cinema::selectSeat();
+    if (selectSeat()) {
+        places[selectSeat()].display();
+    }
 }
 
 void Cinema::displayAllSeats() {
