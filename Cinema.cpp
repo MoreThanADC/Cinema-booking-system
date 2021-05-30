@@ -7,7 +7,7 @@ Cinema::Cinema() {
     }
 };
 
-void Cinema::displayAllPLaces() {
+void Cinema::displayAllPlaces() {
     for (auto& el : places) {
         el.display();
     }

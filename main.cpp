@@ -3,12 +3,14 @@
 #include "Cinema.hpp"
 
 int main() {
-    // printMenu();
-    // selectAction();
+   
 
     Seat reservation;
     Cinema kino;
-    kino.displayAllPLaces();
+    
+    printMenu();
+    selectAction();
+    
 
    
     return 0;
