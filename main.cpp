@@ -2,5 +2,6 @@
 
 int main() {
     printMenu();
+    selectAction();
     return 0;
 }
