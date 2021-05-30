@@ -13,13 +13,13 @@ public:
     std::string getSurname() const { return surname_; };
     size_t getId() const { return seatId_; };
     bool isReserved() const { return isReserved_; };
-    
+
     // member functions
     void reserve();
 
 private:
-    const std::string name_;
-    const std::string surname_;
-    const size_t seatId_;
-    bool isReserved_;
+    std::string name_;
+    std::string surname_;
+    size_t seatId_;
+    bool isReserved_ = false;
 };
