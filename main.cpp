@@ -3,15 +3,49 @@
 #include "Cinema.hpp"
 
 int main() {
-   
-
-    Seat reservation;
     Cinema kino;
-    
     printMenu();
-    selectAction();
-    
 
-   
+    std::cout << "Select an option: ";
+    char choice = getchar();
+
+    while (choice != '7') {
+        pressAButton();
+        switch (choice) {
+        case '1' : {
+            kino.addReservation();
+            break;
+        }
+        case '2' : {
+            std::cout << "Delete reservation \n";
+            break;
+        }
+        case '3' : {
+            std::cout << "Check the place \n";
+            break;
+        }
+        case '4' : {
+            kino.displayAllSeats();
+            break;
+        }
+        case '5' : {
+            kino.displayAvailableSeats();
+            break;
+        }
+        case '6' : {
+            kino.displayReservedSeats();
+            break;
+        }
+        default : {
+            std::cout << "There is no such option \n"; 
+            std::cin.ignore();
+            std::cout << "Select an option: ";
+            choice = getchar();
+        }
+        }
+    }
+
+
+
     return 0;
 }

@@ -4,4 +4,5 @@
 
 
 void printMenu();
-int selectAction();
+void pressAButton();
+

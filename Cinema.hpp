@@ -8,8 +8,13 @@ class Cinema {
 
 public:
     Cinema();
-    void displayAllPlaces();
+    void addReservation();
+    void selectSeat();
+    void displayAllSeats();
+    void displayAvailableSeats();
+    void displayReservedSeats();
+
 private:
-    const size_t numberOfSeats_ = 30;
+    const size_t numberOfSeats_ = 7;
     std::vector<Seat> places;
 };
