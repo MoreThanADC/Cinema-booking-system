@@ -15,5 +15,4 @@ void pressAButton() {
     std::getchar();
     std::cin.ignore();
     std::cin.sync();
-    
 }

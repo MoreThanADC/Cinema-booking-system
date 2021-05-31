@@ -12,6 +12,7 @@ int main() {
         printMenu();
         std::cout << "Select an option: ";
         choice = getchar();
+        
         switch (choice) {
         case '1' : {
             system("clear");
@@ -61,8 +62,6 @@ int main() {
         }
         } 
     } while (choice != '7');
-
-
 
     return 0;
 }

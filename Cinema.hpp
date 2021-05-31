@@ -7,14 +7,8 @@
 class Cinema {
 
 public:
-    // c-tor
     Cinema();
 
-    // getters
-    const size_t getNumberOfSeats() const { return numberOfSeats_; };
-    const size_t getNumberOfReservedSeats() const { return numberOfReservedSeats_; };
-
-    // member functions
     void addReservation();
     void deleteReservation();
     int selectSeat();

@@ -1,8 +1,8 @@
 #include "Cinema.hpp"
 
 Cinema::Cinema() {
-    places_.reserve(Cinema::getNumberOfSeats());
-    for (auto i = 1; i <= Cinema::getNumberOfSeats(); ++i) {
+    places_.reserve(numberOfSeats_);
+    for (auto i = 1; i <= numberOfSeats_; ++i) {
         places_.push_back(Seat("", "", i, false));
     }
 };
@@ -12,10 +12,12 @@ void Cinema::addReservation() {
     std::cout << "Reserved seats: " << numberOfReservedSeats_ << "\n\n";
     std::cout << "Available seats: \n\n";
     Cinema::displayAvailableSeats();
-    int selectedSeat = Cinema::selectSeat();
-    if (selectedSeat) {
-        places_[selectedSeat - 1].reserve();
-        numberOfReservedSeats_++; 
+    if (numberOfReservedSeats_ < numberOfSeats_) {
+        int selectedSeat = Cinema::selectSeat();
+        if (selectedSeat) {
+            places_[selectedSeat - 1].reserve();
+            numberOfReservedSeats_++; 
+        }
     }
 }
 
@@ -28,7 +30,6 @@ void Cinema::deleteReservation() {
         if (selectedSeat) {
             places_[selectedSeat - 1].cancelReservation();
             numberOfReservedSeats_--;
-            
         }
     }
     
@@ -38,13 +39,13 @@ int Cinema::selectSeat() {
     size_t selected;
     std::cout << "\nSelect number of seat: ";
     std::cin >> selected;
-
     if (selected < 1 || selected > numberOfSeats_) {
         std::cout << "there is no such place\n";
         return 0;
     } 
     return selected;
 }
+
 void Cinema::checkSeat() {
     std::cout << "Check the reservation: \n";
     int selectedSeat = Cinema::selectSeat();
@@ -70,7 +71,6 @@ void Cinema::displayAvailableSeats() {
     if ((numberOfSeats_ - numberOfReservedSeats_) == 0) {
         std::cout << "All seats are reserved\n";
     }
-
 }
 
 void Cinema::displayReservedSeats() {
