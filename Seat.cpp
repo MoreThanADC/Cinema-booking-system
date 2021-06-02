@@ -16,7 +16,6 @@ void Seat::reserve() {
     if (isReserved_) {
         std::cout << "The place is already booked\n";
     } else {
-
         std::cin.ignore();
         std::cout << "Name: ";
         std::getline(std::cin, name_);

@@ -8,12 +8,11 @@ Cinema::Cinema() {
 };
 
 void Cinema::addReservation() {
-    std::cout << "Free seats: " << numberOfSeats_ - numberOfReservedSeats_ << '\n';
-    std::cout << "Reserved seats: " << numberOfReservedSeats_ << "\n\n";
+    displayAmountOfFreeAndReservedSeats();
     std::cout << "Available seats: \n\n";
-    Cinema::displayAvailableSeats();
+    displayAvailableSeats();
     if (numberOfReservedSeats_ < numberOfSeats_) {
-        int selectedSeat = Cinema::selectSeat();
+        int selectedSeat = selectSeat();
         if (selectedSeat) {
             places_[selectedSeat - 1].reserve();
             numberOfReservedSeats_++; 
@@ -22,11 +21,10 @@ void Cinema::addReservation() {
 }
 
 void Cinema::deleteReservation() {
-    std::cout << "Free seats: " << numberOfSeats_ - numberOfReservedSeats_ << '\n';
-    std::cout << "Reserved seats: " << numberOfReservedSeats_ << "\n\n";
-    Cinema::displayReservedSeats();
+    displayAmountOfFreeAndReservedSeats();
+    displayReservedSeats();
     if (numberOfReservedSeats_ > 0) {
-        int selectedSeat = Cinema::selectSeat();
+        int selectedSeat = selectSeat();
         if (selectedSeat) {
             places_[selectedSeat - 1].cancelReservation();
             numberOfReservedSeats_--;
@@ -48,21 +46,21 @@ int Cinema::selectSeat() {
 
 void Cinema::checkSeat() {
     std::cout << "Check the reservation: \n";
-    int selectedSeat = Cinema::selectSeat();
+    int selectedSeat = selectSeat();
     if (selectedSeat) {
         places_[selectedSeat - 1].display();
     }
 }
 
 void Cinema::displayAllSeats() {
-    std::cout << "Free seats: " << numberOfSeats_ - numberOfReservedSeats_ << '\n';
-    std::cout << "Reserved seats: " << numberOfReservedSeats_ << "\n\n";
+    displayAmountOfFreeAndReservedSeats();
     for (auto& el : places_) {
         el.display();
     }
 }
 
 void Cinema::displayAvailableSeats() {
+    displayAmountOfFreeAndReservedSeats();
     for (auto& el : places_) {
         if (!el.isReserved()) {
             el.display();
@@ -74,6 +72,7 @@ void Cinema::displayAvailableSeats() {
 }
 
 void Cinema::displayReservedSeats() {
+    displayAmountOfFreeAndReservedSeats();
     for (auto& el : places_) {
         if (el.isReserved()) {
             el.display();
@@ -82,4 +81,9 @@ void Cinema::displayReservedSeats() {
     if (numberOfReservedSeats_ == 0) {
         std::cout << "All seats are free\n";
     }
+}
+
+void Cinema::displayAmountOfFreeAndReservedSeats() {
+    std::cout << "Free seats: " << numberOfSeats_ - numberOfReservedSeats_ << '\n';
+    std::cout << "Reserved seats: " << numberOfReservedSeats_ << "\n\n";
 }

@@ -16,6 +16,7 @@ public:
     void displayAllSeats();
     void displayAvailableSeats();
     void displayReservedSeats();
+    void displayAmountOfFreeAndReservedSeats();
 
 private:
     const size_t numberOfSeats_ = 7;
