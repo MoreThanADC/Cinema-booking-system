@@ -7,7 +7,7 @@ int main() {
     CinemaHall
  kino;
     char choice;
-
+    
     do {
         system("clear");
         printMenu();
