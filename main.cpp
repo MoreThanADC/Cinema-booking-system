@@ -1,10 +1,11 @@
-#include "Cinema.hpp"
+#include "CinemaHall.hpp"
 #include "Menu.hpp"
 #include "Seat.hpp"
 
 int main() {
 
-    Cinema kino;
+    CinemaHall
+ kino;
     char choice;
 
     do {

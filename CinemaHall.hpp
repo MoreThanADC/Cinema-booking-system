@@ -4,10 +4,10 @@
 #include <vector>
 #include "Seat.hpp"
 
-class Cinema {
+class CinemaHall {
 
 public:
-    Cinema();
+    CinemaHall();
 
     void addReservation();
     void deleteReservation();
@@ -19,7 +19,7 @@ public:
     void displayAmountOfFreeAndReservedSeats();
 
 private:
-    const size_t numberOfSeats_ = 7;
+    const size_t numberOfSeats_ = 10;
     std::vector<Seat> places_;
     size_t numberOfReservedSeats_ = 0;
 };

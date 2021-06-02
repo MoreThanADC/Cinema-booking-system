@@ -1,5 +1,5 @@
 #include "Seat.hpp"
-#include "Cinema.hpp"
+#include "CinemaHall.hpp"
 
 Seat::Seat() {
     name_ = "";

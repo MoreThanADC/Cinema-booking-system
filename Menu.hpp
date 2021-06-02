@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-#include "Cinema.hpp"
+#include "CinemaHall.hpp"
 
 void printMenu();
 void pressAButton();
