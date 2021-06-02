@@ -12,7 +12,7 @@ Cinema::Cinema() {
 void Cinema::displayAllFilms() {
     size_t counter = 0;
     for(auto& el : halls_) {
-        std::cout << ++counter << ". " << el.getFilmName() << '/n';
+        std::cout << ++counter << ". " << el.getFilmName() << '\n';
     }
 }
 

@@ -9,7 +9,6 @@ public:
     Cinema();
     void displayAllFilms();
 
-
 private:
     std::vector<CinemaHall> halls_;
     size_t amountOfHalls_ = 5;

@@ -10,6 +10,65 @@ void printMenu() {
     std::cout << "7. Close the system. \n\n";
 }
 
+void selectAction(CinemaHall& hall) {
+    char choice;
+    do {
+        system("clear");
+        printMenu();
+        std::cout << "Select an option: ";
+        choice = getchar();
+        
+        switch (choice) {
+        case '1' : {
+            system("clear");
+            hall.addReservation();
+            pressAButton();
+            break;
+        }
+        case '2' : {
+            system("clear");
+            hall.deleteReservation();
+            pressAButton();
+            break;
+        }
+        case '3' : {
+            system("clear");
+            hall.checkSeat();
+            pressAButton();
+            break;
+        }
+        case '4' : {
+            system("clear");
+            hall.displayAllSeats();
+            pressAButton();
+            break;
+        }
+        case '5' : {
+            system("clear");
+            hall.displayAvailableSeats();
+            pressAButton();
+            break;
+        }
+        case '6' : {
+            system("clear");
+            hall.displayReservedSeats();
+            pressAButton();
+            break;
+        }
+        case '7' : {
+            system("clear");
+            std::cout << "Good Bye!\n";
+            break;
+        }
+        default : {
+            system("clear");
+            std::cout << "There is no such option \n"; 
+            break;
+        }
+        } 
+    } while (choice != '7');
+}
+
 void pressAButton() {
     std::cout << "\nPress a button to continue: ";
     std::getchar();
