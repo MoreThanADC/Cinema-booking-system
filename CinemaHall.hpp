@@ -9,6 +9,8 @@ class CinemaHall {
 public:
     CinemaHall();
 
+    void setHallNumber(int number){ hallNumber_ = number; };
+
     void addReservation();
     void deleteReservation();
     int selectSeat();
@@ -22,4 +24,6 @@ private:
     const size_t numberOfSeats_ = 10;
     std::vector<Seat> places_;
     size_t numberOfReservedSeats_ = 0;
+    int hallNumber_ = 0;
+
 };

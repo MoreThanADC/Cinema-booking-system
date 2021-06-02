@@ -1,9 +1,11 @@
-
 #include "Cinema.hpp"
 
-Cinema::Cinema(){
+Cinema::Cinema() {
     halls_.reserve(amountOfHalls_);
-    for (int i = 1; i <= amountOfHalls_; ++i) {
+    for (auto i = 1; i <= amountOfHalls_; ++i) {
         halls_.push_back(CinemaHall());
+        halls_[i].setHallNumber(i);
     }
-};
+}
+
+

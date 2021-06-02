@@ -5,7 +5,7 @@ CinemaHall::CinemaHall() {
     for (auto i = 1; i <= numberOfSeats_; ++i) {
         places_.push_back(Seat("", "", i, false));
     }
-};
+}
 
 void CinemaHall::addReservation() {
     displayAmountOfFreeAndReservedSeats();
