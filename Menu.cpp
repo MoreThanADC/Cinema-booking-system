@@ -13,11 +13,9 @@ void printMenu() {
 
 void selectFilm(Cinema& films) {
 
-        
         films.displayAllFilms();
-        char select;
         std::cin.sync();
-        select = std::getchar();
+        char select = std::getchar();
     
         switch (select) {
         case '0' : std::exit(0);
@@ -34,17 +32,15 @@ void selectFilm(Cinema& films) {
 
 void selectSeat(CinemaHall hall, Cinema& films) {
     
-    std::cin.ignore();
+    std::cin.sync();
     system("clear");
     printMenu();
     char choice = getchar();
-    
     
     switch (choice) {
     case '1' : {
         hall.addReservation();
         selectFilm(films);
-        
         break;
     }
     case '2' : {
