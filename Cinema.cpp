@@ -10,10 +10,12 @@ Cinema::Cinema() {
 }
 
 void Cinema::displayAllFilms() {
+    system("clear");
     size_t counter = 0;
     for(auto& el : halls_) {
         std::cout << ++counter << ". " << el.getFilmName() << '\n';
     }
+    std::cout << "\nSelect film (0 quit):";  
 }
 
 

@@ -5,6 +5,6 @@
 
 void printMenu();
 void selectFilm(Cinema&);
-void selectSeat(CinemaHall);
-void pressAButton();
+void selectSeat(CinemaHall, Cinema&);
+
 
