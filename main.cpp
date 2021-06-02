@@ -4,8 +4,7 @@
 
 int main() {
 
-    CinemaHall
- kino;
+    CinemaHall kino;
     char choice;
     
     do {

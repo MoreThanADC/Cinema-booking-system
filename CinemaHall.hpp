@@ -11,6 +11,9 @@ public:
 
     void setHallNumber(int number) { hallNumber_ = number; };
     void setFilmName(std::string movie) { filmName_ = movie; };
+    std::string getFilmName() const { return filmName_; };
+
+
     void addReservation();
     void deleteReservation();
     int selectSeat();

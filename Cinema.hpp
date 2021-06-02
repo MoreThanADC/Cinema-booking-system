@@ -7,6 +7,8 @@
 class Cinema {
 public:
     Cinema();
+    void displayAllFilms();
+
 
 private:
     std::vector<CinemaHall> halls_;
