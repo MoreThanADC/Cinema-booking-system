@@ -2,9 +2,9 @@
 
 Cinema::Cinema() {
     halls_.reserve(amountOfHalls_);
-    for (auto i = 1; i <= amountOfHalls_; ++i) {
+    for (auto i = 0; i < amountOfHalls_; ++i) {
         halls_.push_back(CinemaHall());
-        halls_[i].setHallNumber(i);
+        halls_[i].setHallNumber(i+1);
         halls_[i].setFilmName(films_[i]);
     }
 }

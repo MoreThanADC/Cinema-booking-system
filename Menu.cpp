@@ -7,10 +7,37 @@ void printMenu() {
     std::cout << "4. Display all seats. \n";
     std::cout << "5. Display available seats. \n";
     std::cout << "6. Display reserved seats. \n";
-    std::cout << "7. Close the system. \n\n";
+    std::cout << "7. Back to film select menu. \n\n";
 }
 
-void selectAction(CinemaHall& hall) {
+void selectFilm(Cinema& films) {
+    char choice; 
+
+    do {
+        system("clear");
+        films.displayAllFilms();
+        std::cout << "\nSelect film (0 quit): ";
+        choice = getchar();
+
+        switch (choice) {
+        case '1' : selectSeat(films.getFilm(1));
+        case '2' : selectSeat(films.getFilm(2));
+        case '3' : selectSeat(films.getFilm(3));
+        case '4' : selectSeat(films.getFilm(4));
+        case '5' : selectSeat(films.getFilm(5));
+        default:
+            system("clear");
+            std::cout << "There is no such option \n\n"; 
+            std::cout << "Press a button to continue: ";
+            std::getchar();
+            std::cin.ignore();
+            std::cin.sync();
+            break;
+        }
+    } while ( choice != 0);
+}
+
+void selectSeat(CinemaHall hall) {
     char choice;
     do {
         system("clear");
@@ -70,6 +97,7 @@ void selectAction(CinemaHall& hall) {
 }
 
 void pressAButton() {
+    system("clear");
     std::cout << "\nPress a button to continue: ";
     std::getchar();
     std::cin.ignore();

@@ -1,8 +1,10 @@
 #pragma once
 #include <iostream>
 #include "CinemaHall.hpp"
+#include "Cinema.hpp"
 
 void printMenu();
-void selectAction(CinemaHall&);
+void selectFilm(Cinema&);
+void selectSeat(CinemaHall);
 void pressAButton();
 
