@@ -4,7 +4,6 @@
 #include <vector>
 #include "Seat.hpp"
 
-
 class CinemaHall {
 
 public:
@@ -23,12 +22,10 @@ public:
     void displayAvailableSeats();
     void displayReservedSeats();
     void displayAmountOfFreeAndReservedSeats();
-
 private:
     const size_t numberOfSeats_ = 10;
     std::vector<Seat> places_;
     size_t numberOfReservedSeats_ = 0;
     int hallNumber_ = 0;
     std::string filmName_ = "";
-  
 };

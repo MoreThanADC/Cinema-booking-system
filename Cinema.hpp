@@ -3,7 +3,6 @@
 #include <vector>
 #include "CinemaHall.hpp"
 
-
 class Cinema {
 public:
     Cinema();

@@ -46,4 +46,3 @@ void Seat::display() {
         std::cout << "Seat number " << seatId_  << " is free\n";
     }
 }
-

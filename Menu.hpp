@@ -7,4 +7,3 @@ void printMenu();
 void selectFilm(Cinema&);
 void selectSeat(CinemaHall&, Cinema&);
 void pressButton();
-

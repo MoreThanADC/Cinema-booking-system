@@ -4,7 +4,6 @@
 #include "Seat.hpp"
 
 int main() {
-
     Cinema cinema;
     selectFilm(cinema);
 
