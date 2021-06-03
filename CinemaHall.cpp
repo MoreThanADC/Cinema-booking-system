@@ -13,9 +13,11 @@ void CinemaHall::addReservation() {
     displayAvailableSeats();
     if (numberOfReservedSeats_ < numberOfSeats_) {
         int selectedSeat = selectSeat();
-        if (selectedSeat && !places_[selectedSeat].isReserved()) {
+        if (selectedSeat && !(places_[selectedSeat - 1].isReserved())) {
             places_[selectedSeat - 1].reserve();
             numberOfReservedSeats_++;
+        } else {
+            std::cout << "This seat is already selected\n";
         }
     }
 }
@@ -25,7 +27,7 @@ void CinemaHall::deleteReservation() {
     displayReservedSeats();
     if (numberOfReservedSeats_ > 0) {
         int selectedSeat = selectSeat();
-        if (selectedSeat) {
+        if (selectedSeat && (places_[selectedSeat - 1].isReserved())) {
             places_[selectedSeat - 1].cancelReservation();
             numberOfReservedSeats_--;
         }

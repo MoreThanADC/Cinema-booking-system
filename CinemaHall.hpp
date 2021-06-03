@@ -3,7 +3,7 @@
 #include <numeric>
 #include <vector>
 #include "Seat.hpp"
-#include "Cinema.hpp"
+
 
 class CinemaHall {
 
