@@ -31,7 +31,6 @@ void selectFilm(Cinema& films) {
 }
 
 void selectSeat(CinemaHall& hall, Cinema& films) {
-    
     std::cin.sync();
     system("clear");
     printMenu();

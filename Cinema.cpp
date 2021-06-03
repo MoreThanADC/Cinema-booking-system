@@ -17,12 +17,3 @@ void Cinema::displayAllFilms() {
     }
     std::cout << "\nSelect film (0 quit): ";  
 }
-
-
-
-
-    
-
-
-
-
