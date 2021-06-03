@@ -8,7 +8,7 @@ class Cinema {
 public:
     Cinema();
     void displayAllFilms();
-    CinemaHall getFilm(int number){ return halls_[number];}
+    CinemaHall& getFilm(int number){ return halls_[number] ;};
 
 private:
     std::vector<CinemaHall> halls_;

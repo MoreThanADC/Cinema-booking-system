@@ -3,6 +3,7 @@
 #include <numeric>
 #include <vector>
 #include "Seat.hpp"
+#include "Cinema.hpp"
 
 class CinemaHall {
 
@@ -12,6 +13,7 @@ public:
     void setHallNumber(int number) { hallNumber_ = number; };
     void setFilmName(std::string movie) { filmName_ = movie; };
     std::string getFilmName() const { return filmName_; };
+    int getNumberOfReservedSeats() { return numberOfReservedSeats_; };
 
     void addReservation();
     void deleteReservation();

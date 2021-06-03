@@ -13,9 +13,9 @@ void CinemaHall::addReservation() {
     displayAvailableSeats();
     if (numberOfReservedSeats_ < numberOfSeats_) {
         int selectedSeat = selectSeat();
-        if (selectedSeat) {
+        if (selectedSeat && !places_[selectedSeat].isReserved()) {
             places_[selectedSeat - 1].reserve();
-            numberOfReservedSeats_++; 
+            numberOfReservedSeats_++;
         }
     }
 }

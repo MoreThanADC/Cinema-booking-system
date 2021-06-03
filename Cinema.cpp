@@ -15,7 +15,7 @@ void Cinema::displayAllFilms() {
     for(auto& el : halls_) {
         std::cout << ++counter << ". " << el.getFilmName() << '\n';
     }
-    std::cout << "\nSelect film (0 quit):";  
+    std::cout << "\nSelect film (0 quit): ";  
 }
 
 

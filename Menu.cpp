@@ -8,13 +8,13 @@ void printMenu() {
     std::cout << "5. Display available seats. \n";
     std::cout << "6. Display reserved seats. \n";
     std::cout << "7. Back to film select menu. \n\n";
-    std::cout << "Select an option:";
+    std::cout << "Select an option: ";
 }
 
 void selectFilm(Cinema& films) {
 
-        films.displayAllFilms();
         std::cin.sync();
+        films.displayAllFilms();
         char select = std::getchar();
     
         switch (select) {
@@ -30,7 +30,7 @@ void selectFilm(Cinema& films) {
         }
 }
 
-void selectSeat(CinemaHall hall, Cinema& films) {
+void selectSeat(CinemaHall& hall, Cinema& films) {
     
     std::cin.sync();
     system("clear");
@@ -39,32 +39,44 @@ void selectSeat(CinemaHall hall, Cinema& films) {
     
     switch (choice) {
     case '1' : {
+        system("clear");
         hall.addReservation();
+        pressButton();
         selectFilm(films);
         break;
     }
     case '2' : {
+        system("clear");
         hall.deleteReservation();
+        pressButton();
         selectFilm(films);
         break;
     }
     case '3' : {
+        system("clear");
         hall.checkSeat();
+        pressButton();
         selectFilm(films);
         break;
     }
     case '4' : {
+        system("clear");
         hall.displayAllSeats();
+        pressButton();
         selectFilm(films);
         break;
     }
     case '5' : {
+        system("clear");
         hall.displayAvailableSeats();
+        pressButton();
         selectFilm(films);
         break;
     }
     case '6' : {
+        system("clear");
         hall.displayReservedSeats();
+        pressButton();
         selectFilm(films);
         break;
     }
@@ -77,4 +89,10 @@ void selectSeat(CinemaHall hall, Cinema& films) {
         break;
     }
     } 
+}
+
+void pressButton() {
+    std::cout << "\nPress the key to continue: ";
+    std::cin.ignore();
+    std::getchar();
 }
