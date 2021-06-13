@@ -15,7 +15,7 @@ void selectFilm(Cinema& films) {
 
         std::cin.sync();
         films.displayAllFilms();
-        char select = std::getchar();
+        auto select = std::getchar();
     
         switch (select) {
         case '0' : std::exit(0);
@@ -34,7 +34,7 @@ void selectSeat(CinemaHall& hall, Cinema& films) {
     std::cin.sync();
     system("clear");
     printMenu();
-    char choice = getchar();
+    auto choice = getchar();
     
     switch (choice) {
     case '1' : {

@@ -9,14 +9,14 @@ class CinemaHall {
 public:
     CinemaHall();
 
-    void setHallNumber(int number) { hallNumber_ = number; };
+    void setHallNumber(size_t number) { hallNumber_ = number; };
     void setFilmName(std::string movie) { filmName_ = movie; };
     std::string getFilmName() const { return filmName_; };
-    int getNumberOfReservedSeats() { return numberOfReservedSeats_; };
+    size_t getNumberOfReservedSeats() const { return numberOfReservedSeats_; };
 
     void addReservation();
     void deleteReservation();
-    int selectSeat();
+    size_t selectSeat();
     void checkSeat();
     void displayAllSeats();
     void displayAvailableSeats();
@@ -26,6 +26,6 @@ private:
     const size_t numberOfSeats_ = 10;
     std::vector<Seat> places_;
     size_t numberOfReservedSeats_ = 0;
-    int hallNumber_ = 0;
+    size_t hallNumber_ = 0;
     std::string filmName_ = "";
 };
