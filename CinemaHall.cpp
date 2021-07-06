@@ -8,7 +8,6 @@ CinemaHall::CinemaHall() {
 }
 
 void CinemaHall::addReservation() {
-    displayAmountOfFreeAndReservedSeats();
     std::cout << "Available seats: \n\n";
     displayAvailableSeats();
     if (numberOfReservedSeats_ < numberOfSeats_) {

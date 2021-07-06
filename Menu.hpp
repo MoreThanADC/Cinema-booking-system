@@ -1,5 +1,7 @@
 #pragma once
+
 #include <iostream>
+
 #include "CinemaHall.hpp"
 #include "Cinema.hpp"
 
