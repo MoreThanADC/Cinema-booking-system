@@ -8,4 +8,5 @@ The project is constantly being developed. In the future I plan to add unit test
 Choose your favorite movie and have fun!
 
 Authors: @MoreThanADC
+
 Used technology: C++, OOP, CMake, catch2
